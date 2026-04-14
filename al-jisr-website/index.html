@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نادي الجسر الرياضي | Al-Jisr Sports Club</title>
+    <meta name="description" content="أكاديمية متكاملة لتطوير لاعبي كرة القدم. منشأة رياضية تابعة لشركة رسن القابضة.">
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <svg viewBox="0 0 100 100" class="logo-svg">
+                    <!-- Al-Jisr Logo -->
+                    <polygon points="50,10 90,90 10,90" fill="none" stroke="url(#goldGradient)" stroke-width="8" />
+                    <path d="M 30,70 Q 50,20 70,70" fill="none" stroke="var(--color-teal)" stroke-width="6" />
+                    <defs>
+                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFDF00" />
+                            <stop offset="50%" stop-color="#D4AF37" />
+                            <stop offset="100%" stop-color="#996515" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">نادي الجسر الرياضي</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#about">من نحن</a>
+                <a href="#why-us">لماذا الجسر</a>
+                <a href="#programs">البرامج</a>
+                <a href="#memberships">العضويات</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="#memberships" class="btn btn-gold btn-sm"><span class="shine"></span>سجّل الآن</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="container hero-container-split scroll-reveal">
+            <div class="hero-text-box">
+                <h1 class="hero-title">ابدأ رحلة <span>الاحتراف الحقيقي</span> من هنا</h1>
+                <p class="hero-subtitle">
+                    نادي الجسر الرياضي… أكاديمية متكاملة لتطوير لاعبي كرة القدم وفق أعلى المعايير العالمية، تحت إشراف نخبة من المدربين المتخصصين.
+                </p>
+                <div class="hero-highlights">
+                    <span>✓ تدريب احترافي</span>
+                    <span>✓ برامج متكاملة</span>
+                    <span>✓ سكن وإقامة</span>
+                    <span>✓ رعاية طبية وتعليمية</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#memberships" class="btn btn-gold btn-large">
+                        <span class="shine"></span>
+                        سجّل الآن
+                    </a>
+                    <a href="#contact" class="btn btn-outline btn-large">
+                        احجز تجربة مجانية
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-box">
+                <div class="hero-image-wrapper">
+                    <img src="images/hero_pitch.png" alt="ملعب كرة قدم احترافي">
+                    <div class="image-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="section about-section">
+        <div class="container about-container scroll-reveal">
+            <div class="about-content">
+                <h2 class="section-title">من نحن</h2>
+                <div class="title-underline"></div>
+                <p class="about-text">
+                    نادي الجسر الرياضي هو مشروع رياضي متكامل يهدف إلى إعداد جيل جديد من لاعبي كرة القدم المحترفين، من
+                    خلال بيئة احترافية تجمع بين التدريب المتخصص، والتعليم، والرعاية الصحية، والدعم النفسي.
+                    <br><br>
+                    نؤمن أن بناء اللاعب لا يقتصر على المهارة داخل الملعب فقط، بل يشمل تطوير الشخصية، وتعزيز الانضباط،
+                    ورفع الوعي الرياضي والثقافي، ليكون مؤهلاً للانضمام إلى الأندية والمنتخبات مستقبلاً.
+                </p>
+
+                <div class="about-pillars">
+                    <div class="pillar">
+                        <div class="pillar-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                            </svg>
+                        </div>
+                        <h3>تدريب متخصص ومستمر</h3>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2">
+                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                            </svg>
+                        </div>
+                        <h3>تطوير الشخصية والتعليم</h3>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                            </svg>
+                        </div>
+                        <h3>رعاية صحية ودعم نفسي</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image-wrapper">
+                <div class="about-image-layer">
+                    <img src="images/about_players.png" alt="تدريبات اللاعبين المحترفين" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Al-Jisr (7 Icons Grid) -->
+    <section id="why-us" class="section bg-darker">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title text-center">لماذا نادي الجسر؟</h2>
+                <div class="title-underline center"></div>
+            </div>
+
+            <div class="slider-container scroll-reveal">
+                <div class="slider-viewport">
+                    <div class="features-grid slider-track">
+                        <!-- 1 -->
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path
+                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                    <path d="M2 12h20" />
+                                </svg>
+                            </div>
+                            <h3>تدريب عالمي</h3>
+                            <p>تدريب وفق أحدث المعايير العالمية</p>
+                        </div>
+                        <!-- 2 -->
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                </svg>
+                            </div>
+                            <h3>برامج تطوير شاملة</h3>
+                            <p>بدني – مهاري – ذهني</p>
+                        </div>
+                        <!-- 3 -->
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                                </svg>
+                            </div>
+                            <h3>متابعة تعليمية</h3>
+                            <p>متابعة تعليمية مستمرة ودعم دراسي</p>
+                        </div>
+                        <!-- 4 -->
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                    <polyline points="9 22 9 12 15 12 15 22" />
+                                </svg>
+                            </div>
+                            <h3>سكن وإقامة</h3>
+                            <p>سكن وإقامة مجهزة بالكامل للاعبين</p>
+                        </div>
+                        <!-- 5 -->
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                </svg>
+                            </div>
+                            <h3>رعاية طبية</h3>
+                            <p>رعاية طبية وتأهيل احترافي مستمر</p>
+                        </div>
+                        <!-- 6 -->
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                            </div>
+                            <h3>دعم نفسي</h3>
+                            <p>دعم نفسي وتطوير سلوكي متقدم</p>
+                        </div>
+                        <!-- 7 -->
+                        <div class="feature-card highlight">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                            </div>
+                            <h3>مركز إعلامي</h3>
+                            <p>مركز إعلامي لتسويق اللاعبين باحترافية</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <div class="slider-controls">
+                    <button class="slider-btn prev" aria-label="Previous slide">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="slider-dots"></div>
+                    <button class="slider-btn next" aria-label="Next slide">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs (3 Cards) -->
+    <section id="programs" class="section programs-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title text-center">برامج الأكاديمية</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle text-center">نقدم برامج تدريبية متخصصة تناسب جميع المراحل العمرية:</p>
+            </div>
+
+            <div class="programs-grid scroll-reveal">
+                <!-- Program 1 -->
+                <div class="program-card">
+                    <div class="program-img bg-bra3em"></div>
+                    <div class="program-content">
+                        <h3>برنامج البراعم</h3>
+                        <p>تأسيس المهارات الأساسية وبناء حب اللعبة.</p>
+                        <a href="#" class="btn-text">اكتشف البرنامج المناسب لك <span class="arrow">←</span></a>
+                    </div>
+                </div>
+                <!-- Program 2 -->
+                <div class="program-card">
+                    <div class="program-img bg-nasheen"></div>
+                    <div class="program-content">
+                        <h3>برنامج الناشئين</h3>
+                        <p>تطوير المهارات الفنية والتكتيكية.</p>
+                        <a href="#" class="btn-text">اكتشف البرنامج المناسب لك <span class="arrow">←</span></a>
+                    </div>
+                </div>
+                <!-- Program 3 -->
+                <div class="program-card">
+                    <div class="program-img bg-mohtarfin"></div>
+                    <div class="program-content">
+                        <h3>برنامج المحترفين</h3>
+                        <p>إعداد اللاعبين للاحتراف والمنافسات الرسمية.</p>
+                        <a href="#" class="btn-text">اكتشف البرنامج المناسب لك <span class="arrow">←</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities -->
+    <section id="facilities" class="section bg-darker">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title text-center">المرافق والتجهيزات</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle text-center facilities-subtitle">يضم نادي الجسر مجموعة متكاملة من
+                    المرافق الحديثة المصممة لدعم رحلة اللاعب:</p>
+            </div>
+
+            <div class="gallery-grid scroll-reveal">
+                <div class="gallery-item large">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=1000" alt="ملاعب تدريب">
+                    <div class="gallery-overlay">
+                        <span>ملاعب تدريب مجهزة بأعلى المعايير</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&q=80&w=600" alt="صالة لياقة">
+                    <div class="gallery-overlay">
+                        <span>صالات لياقة بدنية متكاملة</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=600" alt="مركز علاج">
+                    <div class="gallery-overlay">
+                        <span>مراكز علاج وتأهيل</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1520277739336-7bf67edfa768?auto=format&fit=crop&q=80&w=600" alt="سكن اللاعبين">
+                    <div class="gallery-overlay">
+                        <span>سكن وإقامة مريحة وآمنة</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" alt="مرافق خدمية">
+                    <div class="gallery-overlay">
+                        <span>مرافق خدمية متكاملة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memberships -->
+    <section id="memberships" class="section memberships-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title text-center">العضويات</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle text-center">اختر الباقة التي تناسب طموحك وابدأ رحلتك نحو الاحتراف:</p>
+            </div>
+
+            <div class="pricing-grid scroll-reveal">
+                <!-- Silver -->
+                <div class="pricing-card silver">
+                    <div class="card-header">
+                        <h3>Silver</h3>
+                    </div>
+                    <p class="card-desc">بداية قوية لتأسيس المهارات</p>
+                    <a href="#" class="btn btn-outline btn-full">احجز مكانك الآن</a>
+                </div>
+
+                <!-- Gold -->
+                <div class="pricing-card gold featured">
+                    <span class="shine"></span>
+                    <div class="popular-badge">الأكثر طلباً</div>
+                    <div class="card-header">
+                        <h3>Gold</h3>
+                    </div>
+                    <p class="card-desc">تطوير متكامل ومستوى أعلى من التدريب</p>
+                    <a href="#" class="btn btn-gold btn-full"><span class="shine"></span>احجز مكانك الآن</a>
+                </div>
+
+                <!-- Diamond -->
+                <div class="pricing-card diamond">
+                    <span class="shine"></span>
+                    <div class="card-header">
+                        <h3>Diamond</h3>
+                    </div>
+                    <p class="card-desc">تجربة احترافية شاملة بكافة الخدمات</p>
+                    <a href="#" class="btn btn-outline btn-full">احجز مكانك الآن</a>
+                </div>
+            </div>
+
+            <div class="text-center memberships-cta">
+                <a href="#" class="btn btn-outline btn-details">عرض تفاصيل العضويات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Player Journey Timeline -->
+    <section id="journey" class="section bg-darker">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title text-center">رحلة اللاعب معنا</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle text-center">رحلتك في نادي الجسر تبدأ بخطوة… وتنتهي بالاحتراف:</p>
+            </div>
+
+            <div class="timeline scroll-reveal">
+                <div class="timeline-item">
+                    <div class="point">1</div>
+                    <div class="content">
+                        <h3>التسجيل والتقديم</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="point">2</div>
+                    <div class="content">
+                        <h3>التقييم الفني والبدني</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="point">3</div>
+                    <div class="content">
+                        <h3>الانضمام للبرنامج المناسب</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="point">4</div>
+                    <div class="content">
+                        <h3>التدريب والتطوير المستمر</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="point">5</div>
+                    <div class="content">
+                        <h3>التأهيل والاحتكاك بالمنافسات</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="point">6</div>
+                    <div class="content">
+                        <h3>التسويق والفرص الاحترافية</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners & Media Center -->
+    <section id="partners-media" class="section">
+        <div class="container">
+            <div class="two-column scroll-reveal">
+
+                <div class="media-center">
+                    <h2 class="section-title">المركز الإعلامي وأخبار النادي</h2>
+                    <div class="title-underline"></div>
+                    <p class="media-text">تابع أحدث أخبار نادي الجسر، واطّلع على تدريبات
+                        اللاعبين، والفعاليات، والأنشطة داخل الأكاديمية.</p>
+
+                    <ul class="features-list media-list">
+                        <li>أخبار النادي</li>
+                        <li>تغطيات حصرية</li>
+                        <li>صور وفيديوهات</li>
+                        <li>إنجازات اللاعبين</li>
+                    </ul>
+
+                    <div class="video-placeholder">
+                        <div class="play-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                        </div>
+                        <span>شاهد أحدث تدريبات الفريق</span>
+                    </div>
+                </div>
+
+                <div class="partners-section">
+                    <h2 class="section-title">شركاء النجاح</h2>
+                    <div class="title-underline"></div>
+                    <p class="partners-text">نفخر بشراكتنا مع جهات رائدة تدعم مسيرة نادي الجسر
+                        نحو التميز، وتساهم في تطوير منظومة رياضية متكاملة.</p>
+                    <div class="partners-grid">
+                        <div class="partner-logo">شريك 1</div>
+                        <div class="partner-logo">شريك 2</div>
+                        <div class="partner-logo">شريك 3</div>
+                        <div class="partner-logo">شريك 4</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="final-cta" class="section final-cta">
+        <div class="container text-center scroll-reveal">
+            <h2 class="section-title">ابدأ اليوم… وكن جزءًا من الجيل القادم من اللاعبين المحترفين</h2>
+            <p class="section-subtitle">سجّل الآن واحجز مكانك في نادي الجسر الرياضي</p>
+            <p class="cta-highlight">الأماكن محدودة والتسجيل متاح لفترة محدودة</p>
+            <a href="#memberships" class="btn btn-gold btn-large">
+                <span class="shine"></span>
+                سجّل الآن
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <!-- Rasan Logo -->
+                    <svg viewBox="0 0 100 100" class="rasan-svg">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="var(--color-gold-mid)" stroke-width="5" />
+                        <polyline points="30,50 50,30 70,70" fill="none" stroke="white" stroke-width="5" />
+                    </svg>
+                </div>
+                <div class="rasan-text">تابعة لشركة رسن القابضة</div>
+                <p class="footer-desc">نبني أجيالاً تعشق الكرة وتتقنها علمياً وعملياً.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#programs">البرامج</a></li>
+                    <li><a href="#memberships">العضويات</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>تابعنا</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">In</a>
+                    <a href="#" class="social-icon">Tw</a>
+                    <a href="#" class="social-icon">Fb</a>
+                    <a href="#" class="social-icon">Yb</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة &copy; 2026 نادي الجسر الرياضي.</p>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
