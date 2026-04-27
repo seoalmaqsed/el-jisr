@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رسن القابضة | Rasan Holding</title>
+    <meta name="description"
+        content="رسن القابضة - مجموعة استثمارية رائدة تقود التحول في قطاعات الرياضة، العقارات، والتكنولوجيا في المنطقة.">
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-rasan {
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.85)), url('https://images.unsplash.com/photo-1586724230021-44149b6c0792?auto=format&fit=crop&q=80&w=1500') no-repeat center center / cover;
+        }
+
+        /* About Section Split Layout */
+        .about-container.split {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 992px) {
+            .about-container.split {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            height: 500px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-overlay-card {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            background: var(--color-bg-card);
+            padding: 25px 35px;
+            border-radius: var(--border-radius-md);
+            border: 1px solid var(--color-gold-mid);
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(10px);
+            z-index: 2;
+        }
+
+        .highlight-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .highlight-text {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .about-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--color-text-muted);
+            margin-bottom: 40px;
+        }
+
+        .holding-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .holding-pillars {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pillar-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 25px;
+            border-radius: var(--border-radius-md);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: var(--transition);
+        }
+
+        body.light-mode .pillar-card {
+            background: rgba(0, 0, 0, 0.02);
+            border-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-gold-mid);
+            background: rgba(212, 175, 55, 0.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .pillar-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .pillar-icon {
+            font-size: 1.5rem;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-gold-mid);
+        }
+
+        .pillar-card p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--color-text-muted);
+        }
+
+        /* Sector Cards */
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .sector-card {
+            position: relative;
+            height: 320px;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .sector-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .sector-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.3) 60%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            transition: all 0.4s ease;
+        }
+
+        .sector-card:hover .sector-img {
+            transform: scale(1.1);
+        }
+
+        .sector-card:hover .sector-overlay {
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.5) 80%);
+        }
+
+        .sector-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--color-gold-mid);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .sector-card:hover .sector-icon {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .sector-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .sector-desc {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .sector-card:hover .sector-desc {
+            max-height: 100px;
+            opacity: 1;
+            margin-bottom: 10px;
+        }
+
+        /* Monogram Avatar */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .team-card.chairman {
+            grid-column: 1 / -1;
+            max-width: 350px;
+            justify-self: center;
+            width: 100%;
+        }
+
+        @media (max-width: 992px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .team-card {
+            background: var(--color-bg-card);
+            padding: 40px 30px;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-gold-mid);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-img.monogram {
+            background: linear-gradient(135deg, var(--color-gold-dark) 0%, rgba(212, 175, 55, 0.15) 100%);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 25px;
+            border: 2px solid var(--color-gold-mid);
+            box-shadow: 12px 12px 25px rgba(0, 0, 0, 0.3), inset 0 0 30px rgba(255, 255, 255, 0.05);
+            transform: rotate(-4deg);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-img.monogram::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.15), transparent 60%);
+        }
+
+        .team-card:hover .team-img.monogram {
+            transform: rotate(0deg) scale(1.1);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        .team-img.monogram span {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .team-img.photo {
+            border-radius: 24px;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 25px;
+            border: 2px solid var(--color-gold-mid);
+            box-shadow: 12px 12px 25px rgba(0, 0, 0, 0.3);
+            transform: rotate(-4deg);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .team-img.photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .team-card:hover .team-img.photo {
+            transform: rotate(0deg) scale(1.1);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        .team-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: var(--color-text-main);
+        }
+
+        .team-info span {
+            color: var(--color-gold-mid);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="rasan_new_logo.png" alt="رسن القابضة" class="nav-logo-img">
+            </a>
+            <nav class="nav-links">
+                <a href="#hero">الرئيسية</a>
+                <a href="#about">من نحن</a>
+                <a href="#team">مجلس الإدارة</a>
+                <a href="#subsidiaries">شركاتنا</a>
+                <a href="join.html">تواصل معنا</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="4.22" x2="19.78" y2="5.64" />
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero hero-rasan">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="container hero-container-center scroll-reveal">
+            <div class="hero-text-box text-center">
+                <h1 class="hero-title">رسن القابضة<br><span>نبني المستقبل</span> بأسس راسخة</h1>
+                <p class="hero-subtitle mx-auto">
+                    كيان استثماري رائد يقود التحول في القطاعات الحيوية لتمكين المجتمعات، دفع عجلة الاقتصاد، وتحقيق
+                    التنمية المستدامة في منطقة الشرق الأوسط وفق معايير عالمية.
+                </p>
+                <div class="hero-highlights justify-center">
+                    <span>✓ رؤية استثمارية ثاقبة</span>
+                    <span>✓ شراكات استراتيجية عالمية</span>
+                    <span>✓ نمو وتطوير مستدام</span>
+                </div>
+                <div class="hero-buttons justify-center">
+                    <a href="#about" class="btn btn-gold btn-large">
+                        <span class="shine"></span>
+                        اكتشف رسن القابضة
+                    </a>
+                    <a href="#subsidiaries" class="btn btn-outline btn-large">
+                        شركاتنا التابعة
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section">
+        <div class="container scroll-reveal">
+            <div class="section-header text-center">
+                <h2 class="section-title">من نحن</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle">إرث من التميز وطموح لا تحده سماء</p>
+            </div>
+
+            <div class="about-container split">
+                <div class="about-image scroll-reveal">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000"
+                        alt="Rasan Holding Office">
+                    <div class="image-overlay-card">
+                        <span class="highlight-number">10M</span>
+                        <span class="highlight-text">رأس مال انطلاق قوي</span>
+                    </div>
+                </div>
+                <div class="about-content scroll-reveal">
+                    <p class="about-text">
+                        <strong>"رسن القابضة"</strong> هي مجموعة استثمارية رائدة تتخذ من الابتكار والتطوير المستدام
+                        منهجاً لها. انطلقنا برؤية طموحة لخلق قيمة مضافة في الاقتصاد الإقليمي من خلال استثمارات
+                        استراتيجية متنوعة.
+                        <br><br>
+                        نحن نؤمن بأن الاستثمار الحقيقي هو الاستثمار في الإنسان وبناء بنية تحتية تخدم الأجيال القادمة.
+                        بفضل خبراتنا المتراكمة وجذورنا المؤسسية القوية، نسعى دائماً لقيادة التغيير الإيجابي في القطاعات
+                        التي نعمل بها، مع الالتزام التام بأعلى معايير الحوكمة والشفافية والجودة الشاملة.
+                    </p>
+
+                    <div class="holding-pillars">
+                        <div class="pillar-card">
+                            <div class="pillar-header">
+                                <span class="pillar-icon">💎</span>
+                                <h3>القيم الأساسية</h3>
+                            </div>
+                            <p>النزاهة، الابتكار، الشفافية، والمسؤولية التامة تجاه مجتمعاتنا وشركائنا.</p>
+                        </div>
+                        <div class="pillar-card">
+                            <div class="pillar-header">
+                                <span class="pillar-icon">🎯</span>
+                                <h3>الرؤية</h3>
+                            </div>
+                            <p>أن نكون الخيار الأول للاستثمارات النوعية في الشرق الأوسط، والمحرك الأساسي للتنمية
+                                المبتكرة.</p>
+                        </div>
+                        <div class="pillar-card">
+                            <div class="pillar-header">
+                                <span class="pillar-icon">🚀</span>
+                                <h3>المهمة</h3>
+                            </div>
+                            <p>تأسيس وإدارة مشاريع رائدة ذات أثر اقتصادي ومجتمعي مستدام، لتحقيق أعلى العوائد لمستثمرينا.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="team" class="section bg-darker">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal">
+                <h2 class="section-title">مجلس الإدارة</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle">قيادات ذات رؤية ثاقبة وخبرات استثنائية تقود مسيرة النجاح</p>
+            </div>
+
+            <div class="team-grid scroll-reveal">
+                <div class="team-card chairman">
+                    <div class="team-img photo">
+                        <img src="فؤاد حامد الحمود.png" alt="فؤاد حامد الحمود">
+                    </div>
+                    <div class="team-info">
+                        <h3>أ. فؤاد حامد الحمود</h3>
+                        <span>رئيس مجلس الإدارة</span>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-img photo">
+                        <img src="عبدالعزيز فؤاد الحمود.png" alt="عبدالعزيز فؤاد الحمود">
+                    </div>
+                    <div class="team-info">
+                        <h3>أ. عبدالعزيز فؤاد الحمود</h3>
+                        <span>عضو مجلس الإدارة</span>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-img photo">
+                        <img src="عادل عبدالله الدرهم.png" alt="عادل عبدالله الدرهم">
+                    </div>
+                    <div class="team-info">
+                        <h3>أ. عادل عبدالله الدرهم</h3>
+                        <span>عضو مجلس الإدارة</span>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-img photo">
+                        <img src="صلاح سالم الدوسري.png" alt="صلاح سالم الدوسري">
+                    </div>
+                    <div class="team-info">
+                        <h3>أ. صلاح سالم الدوسري</h3>
+                        <span>المدير الاستراتيجي</span>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-img photo">
+                        <img src="سعود يوسف الفايز.png" alt="سعود يوسف الفايز">
+                    </div>
+                    <div class="team-info">
+                        <h3>أ. سعود يوسف الفايز</h3>
+                        <span>عضو مجلس الإدارة</span>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-img photo">
+                        <img src="حسين أمين مهدي.png" alt="حسين أمين مهدي">
+                    </div>
+                    <div class="team-info">
+                        <h3>أ. حسين أمين مهدي</h3>
+                        <span>عضو مجلس الإدارة</span>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-img photo">
+                        <img src="مدير تنفيذي (إسباني) (العقد تحت التفاوض.png" alt="مدير تنفيذي إسباني">
+                    </div>
+                    <div class="team-info">
+                        <h3>مدير تنفيذي (إسباني)</h3>
+                        <span>العقد تحت التفاوض</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subsidiaries Section -->
+    <section id="subsidiaries" class="section">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal">
+                <h2 class="section-title">شركاتنا التابعة</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle">أذرعنا الاستثمارية المتخصصة التي تقود التحول في مجالاتها:</p>
+            </div>
+
+            <div class="subsidiary-logo-grid scroll-reveal">
+                <!-- Rasan KSA -->
+                <a href="rasan-saudi.html" class="sub-logo-card">
+                    <div class="logo-box">
+                        <img src="rasan-saudi-logo.png" alt="رسن السعودية">
+                    </div>
+                    <span class="sub-name">رسن السعودية</span>
+                </a>
+
+                <!-- Rasan Egypt -->
+                <a href="rasan-egypt.html" class="sub-logo-card">
+                    <div class="logo-box">
+                        <img src="rasan_new_logo.png" alt="رسن مصر">
+                    </div>
+                    <span class="sub-name">رسن مصر</span>
+                </a>
+
+                <!-- Rasan Kuwait -->
+                <a href="rasan-kuwait.html" class="sub-logo-card">
+                    <div class="logo-box">
+                        <img src="rasan_new_logo.png" alt="رسن الكويت">
+                    </div>
+                    <span class="sub-name">رسن الكويت</span>
+                </a>
+
+                <!-- Al-Jisr Club -->
+                <a href="club.html" class="sub-logo-card">
+                    <div class="logo-box">
+                        <img src="al-jisr-logo.png" alt="نادي الجسر">
+                    </div>
+                    <span class="sub-name">نادي الجسر الرياضي</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- removed leadership section from here -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div class="footer-logo-container" style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <img src="rasan_new_logo.png" alt="رسن القابضة" class="nav-logo-img">
+                </div>
+                <p class="footer-desc">رسن القابضة… نصنع المستقبل بالاستثمار الذكي.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="#hero">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#team">مجلس الإدارة</a></li>
+                    <li><a href="#subsidiaries">الشركات التابعة</a></li>
+                    <li><a href="join.html">تواصل معنا</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>تابعنا</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">In</a>
+                    <a href="#" class="social-icon">Tw</a>
+                    <a href="#" class="social-icon">Fb</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة &copy; 2026 رسن القابضة.</p>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

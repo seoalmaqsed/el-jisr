@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ø§Ù„Ù…Ø±ÙƒØ² Ø§Ù„Ø¥Ø¹Ù„Ø§Ù…ÙŠ | Ù†Ø§Ø¯ÙŠ Ø§Ù„Ø¬Ø³Ø± Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠ</title>
+    <meta name="description" content="ØªØ§Ø¨Ø¹ Ø£Ø­Ø¯Ø« Ø£Ø®Ø¨Ø§Ø± ÙˆÙØ¹Ø§Ù„ÙŠØ§Øª Ù†Ø§Ø¯ÙŠ Ø§Ù„Ø¬Ø³Ø± Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠ ÙˆØ´Ø±ÙƒØ© Ø±Ø³Ù† Ø§Ù„Ù‚Ø§Ø¨Ø¶Ø©.">
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            border-radius: 25px;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-card);
+            color: var(--color-text-main);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--gradient-gold);
+            color: #000;
+            border-color: transparent;
+        }
+        
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .media-item {
+            background: var(--color-bg-card);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
+        }
+        
+        .media-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-gold-mid);
+        }
+        
+        .media-img-wrapper {
+            position: relative;
+            height: 220px;
+        }
+        
+        .media-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(212, 175, 55, 0.9);
+            color: #000;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .media-info {
+            padding: 25px;
+        }
+        
+        .media-date {
+            font-size: 0.85rem;
+            color: var(--color-gold-mid);
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .media-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+        
+        .media-item:hover .play-overlay {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: var(--color-gold-mid);
+        }
+
+        .nav-logos {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo-divider {
+            width: 1px;
+            height: 40px;
+            background: var(--color-border);
+        }
+        .nav-logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="nav-logos">
+                <a href="index.html" class="logo">
+                    <img src="rasan_new_logo.png" alt="Ø±Ø³Ù† Ø§Ù„Ù‚Ø§Ø¨Ø¶Ø©" class="nav-logo-img">
+                </a>
+                <div class="logo-divider"></div>
+                <a href="club.html" class="logo">
+                    <img src="al-jisr-logo.png" alt="Ù†Ø§Ø¯ÙŠ Ø§Ù„Ø¬Ø³Ø±" class="nav-logo-img">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ©</a>
+                <a href="#news">Ø§Ù„Ø£Ø®Ø¨Ø§Ø±</a>
+                <a href="#gallery">Ø§Ù„Ù…Ø¹Ø±Ø¶</a>
+                <a href="#videos">Ø§Ù„ÙÙŠØ¯ÙŠÙˆÙ‡Ø§Øª</a>
+                <a href="join.html">ØªÙˆØ§ØµÙ„ Ù…Ø¹Ù†Ø§</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="join.html" class="btn btn-gold btn-sm"><span class="shine"></span>Ø§Ø´ØªØ±Ùƒ Ø¨Ø§Ù„Ù†Ø´Ø±Ø©</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section bg-darker" style="padding-top: 150px; padding-bottom: 50px;">
+        <div class="container text-center scroll-reveal">
+            <h1 class="section-title">Ø§Ù„Ù…Ø±ÙƒØ² Ø§Ù„Ø¥Ø¹Ù„Ø§Ù…ÙŠ</h1>
+            <div class="title-underline center"></div>
+            <p class="section-subtitle">Ù†Ø§ÙØ°ØªÙƒ Ø¹Ù„Ù‰ Ø£Ø­Ø¯Ø« Ø£Ø®Ø¨Ø§Ø± ÙˆØ¥Ù†Ø¬Ø§Ø²Ø§Øª Ù†Ø§Ø¯ÙŠ Ø§Ù„Ø¬Ø³Ø± ÙˆØ´Ø±ÙƒØ© Ø±Ø³Ù† Ø§Ù„Ù‚Ø§Ø¨Ø¶Ø©</p>
+        </div>
+    </section>
+
+    <!-- Media Content -->
+    <section class="section">
+        <div class="container">
+            <!-- Filters -->
+            <div class="filter-container scroll-reveal">
+                <button class="filter-btn active">Ø§Ù„ÙƒÙ„</button>
+                <button class="filter-btn">Ø£Ø®Ø¨Ø§Ø±</button>
+                <button class="filter-btn">ØµÙˆØ±</button>
+                <button class="filter-btn">ÙÙŠØ¯ÙŠÙˆÙ‡Ø§Øª</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="media-grid scroll-reveal">
+                <!-- Item 1: News -->
+                <div class="media-item">
+                    <div class="media-img-wrapper">
+                        <img src="sports_news_1_1776933834374.png" alt="News 1">
+                    </div>
+                    <div class="media-info">
+                        <span class="media-date">23 Ø£Ø¨Ø±ÙŠÙ„ 2026</span>
+                        <h3>Ù†Ø§Ø¯ÙŠ Ø§Ù„Ø¬Ø³Ø± ÙŠÙØªØªØ­ Ø§Ù„Ù…Ø±Ø­Ù„Ø© Ø§Ù„Ø«Ø§Ù†ÙŠØ© Ù…Ù† Ù…Ù„Ø§Ø¹Ø¨ Ø§Ù„ØªØ¯Ø±ÙŠØ¨ Ø§Ù„Ø­Ø¯ÙŠØ«Ø©</h3>
+                        <p class="about-text">Ø´Ù‡Ø¯ Ø§Ù„Ø§ÙØªØªØ§Ø­ Ø­Ø¶ÙˆØ± ÙƒØ¨Ø§Ø± Ø§Ù„Ù…Ø³Ø¤ÙˆÙ„ÙŠÙ† Ù…Ù† Ø´Ø±ÙƒØ© Ø±Ø³Ù† Ø§Ù„Ù‚Ø§Ø¨Ø¶Ø© ÙˆÙ†Ø®Ø¨Ø© Ù…Ù† Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠÙŠÙ†...</p>
+                        <a href="#" class="btn-text">Ø§Ù‚Ø±Ø£ Ø§Ù„Ù…Ø²ÙŠØ¯ <span class="arrow">â†</span></a>
+                    </div>
+                </div>
+
+                <!-- Item 2: Video -->
+                <div class="media-item">
+                    <div class="media-img-wrapper">
+                        <img src="video_thumbnail_1_1776933904375.png" alt="Video 1">
+                        <div class="video-tag">ÙÙŠØ¯ÙŠÙˆ</div>
+                        <div class="play-overlay">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                    </div>
+                    <div class="media-info">
+                        <span class="media-date">20 Ø£Ø¨Ø±ÙŠÙ„ 2026</span>
+                        <h3>ÙˆØ«Ø§Ø¦Ù‚ÙŠ: Ø±Ø­Ù„Ø© Ø¨Ù†Ø§Ø¡ Ø§Ù„Ø£Ø¨Ø·Ø§Ù„ ÙÙŠ Ø£ÙƒØ§Ø¯ÙŠÙ…ÙŠØ© Ø§Ù„Ø¬Ø³Ø±</h3>
+                        <p class="about-text">Ø´Ø§Ù‡Ø¯ ÙƒÙŠÙ Ù†Ø­ÙˆÙ„ Ø§Ù„Ø´ØºÙ Ø¥Ù„Ù‰ Ø§Ø­ØªØ±Ø§Ù Ù…Ù† Ø®Ù„Ø§Ù„ Ø¨Ø±Ø§Ù…Ø¬Ù†Ø§ Ø§Ù„ØªØ¯Ø±ÙŠØ¨ÙŠØ© Ø§Ù„Ù…ØªÙƒØ§Ù…Ù„Ø©...</p>
+                        <a href="#" class="btn-text">Ø´Ø§Ù‡Ø¯ Ø§Ù„ÙÙŠØ¯ÙŠÙˆ <span class="arrow">â†</span></a>
+                    </div>
+                </div>
+
+                <!-- Item 3: Photo -->
+                <div class="media-item">
+                    <div class="media-img-wrapper">
+                        <img src="about_players.png" alt="Photo 1">
+                    </div>
+                    <div class="media-info">
+                        <span class="media-date">15 Ø£Ø¨Ø±ÙŠÙ„ 2026</span>
+                        <h3>ØªÙˆÙ‚ÙŠØ¹ Ø§ØªÙØ§Ù‚ÙŠØ© ØªØ¹Ø§ÙˆÙ† Ø¨ÙŠÙ† Ø±Ø³Ù† Ø§Ù„Ù‚Ø§Ø¨Ø¶Ø© ÙˆØ´Ø±ÙƒØ§Ø¡ Ø¯ÙˆÙ„ÙŠÙŠÙ†</h3>
+                        <p class="about-text">ØªÙ‡Ø¯Ù Ø§Ù„Ø§ØªÙØ§Ù‚ÙŠØ© Ø¥Ù„Ù‰ ØªØ¹Ø²ÙŠØ² ØªØ¨Ø§Ø¯Ù„ Ø§Ù„Ø®Ø¨Ø±Ø§Øª ÙÙŠ Ù…Ø¬Ø§Ù„ Ø§Ù„ØªØ·ÙˆÙŠØ± Ø§Ù„Ø¹Ù‚Ø§Ø±ÙŠ Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠ...</p>
+                        <a href="#" class="btn-text">Ø§Ù‚Ø±Ø£ Ø§Ù„Ù…Ø²ÙŠØ¯ <span class="arrow">â†</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div class="footer-logo-container" style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <img src="rasan_new_logo.png" alt="Ø±Ø³Ù† Ø§Ù„Ù‚Ø§Ø¨Ø¶Ø©" class="nav-logo-img">
+                </div>
+                <p class="footer-desc">Ù†Ø¨Ø« Ø§Ù„Ø®Ø¨Ø± Ù„Ù†Ø¨Ù†ÙŠ Ø§Ù„Ø«Ù‚Ø©.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Ø±ÙˆØ§Ø¨Ø· Ø³Ø±ÙŠØ¹Ø©</h3>
+                <ul>
+                    <li><a href="index.html">Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ©</a></li>
+                    <li><a href="club.html">Ø§Ù„Ù†Ø§Ø¯ÙŠ</a></li>
+                    <li><a href="join.html">ØªÙˆØ§ØµÙ„ Ù…Ø¹Ù†Ø§</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>ØªØ§Ø¨Ø¹Ù†Ø§</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">In</a>
+                    <a href="#" class="social-icon">Tw</a>
+                    <a href="#" class="social-icon">Fb</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ù‚ÙˆÙ‚ Ù…Ø­ÙÙˆØ¸Ø© &copy; 2026 Ø§Ù„Ù…Ø±ÙƒØ² Ø§Ù„Ø¥Ø¹Ù„Ø§Ù…ÙŠ - Ù†Ø§Ø¯ÙŠ Ø§Ù„Ø¬Ø³Ø±.</p>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

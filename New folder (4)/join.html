@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ø§Ù†Ø¶Ù… Ø¥Ù„ÙŠÙ†Ø§ | Ø±Ø³Ù† Ø§Ù„Ù‚Ø§Ø¨Ø¶Ø© ÙˆÙ†Ø§Ø¯ÙŠ Ø§Ù„Ø¬Ø³Ø±</title>
+    <meta name="description" content="ÙƒÙ† Ø¬Ø²Ø¡Ø§Ù‹ Ù…Ù† Ù…Ø³ØªÙ‚Ø¨Ù„ Ø§Ù„Ø±ÙŠØ§Ø¶Ø© ÙˆØ§Ù„Ø§Ø³ØªØ«Ù…Ø§Ø±. Ø³Ø¬Ù„ Ø§Ù‡ØªÙ…Ø§Ù…Ùƒ Ø§Ù„Ø¢Ù†.">
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .join-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('join_bg_1776933986170.png') no-repeat center center / cover;
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .join-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 10, 10, 0.6);
+        }
+        
+        .glass-form-container {
+            position: relative;
+            z-index: 2;
+            width: 90%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: 50px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        body.light-mode .glass-form-container {
+            background: rgba(255, 255, 255, 0.7);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--color-gold-mid);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-sm);
+            color: #fff;
+            font-family: var(--font-body);
+            transition: var(--transition);
+        }
+        
+        body.light-mode .form-control {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.1);
+            color: #000;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-gold-mid);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        select.form-control option {
+            background: var(--color-bg-dark);
+            color: #fff;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .nav-logos {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo-divider {
+            width: 1px;
+            height: 40px;
+            background: var(--color-border);
+        }
+        .nav-logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="nav-logos">
+                <a href="index.html" class="logo">
+                    <img src="rasan_new_logo.png" alt="Ø±Ø³Ù† Ø§Ù„Ù‚Ø§Ø¨Ø¶Ø©" class="nav-logo-img">
+                </a>
+                <div class="logo-divider"></div>
+                <a href="club.html" class="logo">
+                    <img src="al-jisr-logo.png" alt="Ù†Ø§Ø¯ÙŠ Ø§Ù„Ø¬Ø³Ø±" class="nav-logo-img">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ©</a>
+                <a href="club.html">Ø§Ù„Ù†Ø§Ø¯ÙŠ</a>
+                <a href="media.html">Ø§Ù„Ù…Ø±ÙƒØ² Ø§Ù„Ø¥Ø¹Ù„Ø§Ù…ÙŠ</a>
+                <a href="rasan-egypt.html">Ø±Ø³Ù† Ù…ØµØ±</a>
+                <a href="rasan-kuwait.html">Ø±Ø³Ù† Ø§Ù„ÙƒÙˆÙŠØª</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Join Section -->
+    <section class="join-section">
+        <div class="join-overlay"></div>
+        <div class="glass-form-container scroll-reveal">
+            <h2 class="text-center" style="margin-bottom: 10px;">ÙƒÙ† Ø¬Ø²Ø¡Ø§Ù‹ Ù…Ù† Ø§Ù„Ù…Ø³ØªÙ‚Ø¨Ù„</h2>
+            <p class="text-center" style="color: var(--color-text-muted); margin-bottom: 40px;">Ø³Ø¬Ù„ Ø¨ÙŠØ§Ù†Ø§ØªÙƒ ÙˆØ³Ù†ØªÙˆØ§ØµÙ„ Ù…Ø¹Ùƒ ÙÙŠ Ø£Ù‚Ø±Ø¨ ÙˆÙ‚Øª</p>
+            
+            <form id="join-form">
+                <div class="form-group">
+                    <label>Ø§Ù„Ø§Ø³Ù… Ø§Ù„ÙƒØ§Ù…Ù„</label>
+                    <input type="text" class="form-control" placeholder="Ø£Ø¯Ø®Ù„ Ø§Ø³Ù…Ùƒ Ø§Ù„Ø«Ù„Ø§Ø«ÙŠ" required>
+                </div>
+                <div class="form-group">
+                    <label>Ø§Ù„Ø¨Ø±ÙŠØ¯ Ø§Ù„Ø¥Ù„ÙƒØªØ±ÙˆÙ†ÙŠ</label>
+                    <input type="email" class="form-control" placeholder="example@domain.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Ø±Ù‚Ù… Ø§Ù„Ù‡Ø§ØªÙ</label>
+                    <input type="tel" class="form-control" placeholder="+966 5XXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>Ù†ÙˆØ¹ Ø§Ù„Ø§Ù‡ØªÙ…Ø§Ù…</label>
+                    <select class="form-control" required>
+                        <option value="">Ø§Ø®ØªØ± Ù…Ù† Ø§Ù„Ù‚Ø§Ø¦Ù…Ø©...</option>
+                        <option value="club">ØªØ³Ø¬ÙŠÙ„ Ù„Ø§Ø¹Ø¨ ÙÙŠ Ø§Ù„Ù†Ø§Ø¯ÙŠ</option>
+                        <option value="partnership">Ø´Ø±Ø§ÙƒØ© Ø§Ø³ØªØ«Ù…Ø§Ø±ÙŠØ© (Ø±Ø³Ù† Ø§Ù„Ù‚Ø§Ø¨Ø¶Ø©)</option>
+                        <option value="employment">ÙØ±Øµ Ø¹Ù…Ù„</option>
+                        <option value="other">Ø£Ø®Ø±Ù‰</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Ø±Ø³Ø§Ù„ØªÙƒ (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)</label>
+                    <textarea class="form-control" rows="4" placeholder="ÙƒÙŠÙ ÙŠÙ…ÙƒÙ†Ù†Ø§ Ù…Ø³Ø§Ø¹Ø¯ØªÙƒØŸ"></textarea>
+                </div>
+                <button type="submit" class="btn btn-gold btn-large submit-btn">
+                    <span class="shine"></span>
+                    Ø¥Ø±Ø³Ø§Ù„ Ø§Ù„Ø·Ù„Ø¨
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div class="footer-logo-container" style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <img src="rasan_new_logo.png" alt="Ø±Ø³Ù† Ø§Ù„Ù‚Ø§Ø¨Ø¶Ø©" class="nav-logo-img">
+                </div>
+                <p class="footer-desc">Ù†Ø¨Ù†ÙŠ Ø¬Ø³ÙˆØ±Ø§Ù‹ Ù…Ù† Ø§Ù„ÙØ±Øµ.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ù‚ÙˆÙ‚ Ù…Ø­ÙÙˆØ¸Ø© &copy; 2026 Ø±Ø³Ù† Ø§Ù„Ù‚Ø§Ø¨Ø¶Ø©.</p>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نادي الجسر الرياضي | Al-Jisr Sports Club</title>
+    <meta name="description" content="نادي الجسر الرياضي – الذراع الاستثماري لشركة رسن السعودية في قطاع الرياضة. أكاديميات متكاملة لكرة القدم والسباحة والألعاب المتنوعة.">
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-club {
+            background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.8)), url('hero_pitch.png') no-repeat center center / cover;
+        }
+
+        .vision-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        @media (max-width: 992px) {
+            .vision-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .facility-card {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            height: 300px;
+            transition: var(--transition);
+        }
+
+        .facility-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .facility-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .facility-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(10, 10, 10, 0.9));
+            color: #fff;
+        }
+
+        .nav-logos {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo-divider {
+            width: 1px;
+            height: 40px;
+            background: var(--color-border);
+        }
+        .nav-logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Activities List */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .activities-grid { grid-template-columns: 1fr; }
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 18px 20px;
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .activity-item:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--color-gold-mid);
+            transform: translateX(-5px);
+        }
+
+        .activity-num {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--color-gold-mid);
+            min-width: 30px;
+            line-height: 1;
+        }
+
+        /* Plan Timeline */
+        .plan-timeline {
+            position: relative;
+            padding-right: 30px;
+        }
+
+        .plan-timeline::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--color-gold-mid), var(--color-teal));
+        }
+
+        .plan-item {
+            position: relative;
+            padding: 25px 30px 25px 0;
+            margin-bottom: 10px;
+        }
+
+        .plan-item::before {
+            content: '';
+            position: absolute;
+            right: -7px;
+            top: 30px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--color-gold-mid);
+            border: 2px solid var(--color-bg-dark);
+        }
+
+        .plan-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: rgba(3, 179, 183, 0.15);
+            color: var(--color-teal);
+        }
+
+        .plan-item h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--color-gold-mid);
+        }
+
+        .plan-item p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--color-text-muted);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="nav-logos">
+                <a href="club.html" class="logo">
+                    <img src="al-jisr-logo.png" alt="نادي الجسر" class="nav-logo-img">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="#about">عن النادي</a>
+                <a href="#activities">الأنشطة</a>
+                <a href="#plan">خطة التطوير</a>
+                <a href="#programs">البرامج</a>
+                <a href="join.html">سجل الآن</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="join.html" class="btn btn-gold btn-sm"><span class="shine"></span>سجّل الآن</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero hero-club">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="container hero-container-split scroll-reveal">
+            <div class="hero-text-box">
+                <h1 class="hero-title">نادي الجسر الرياضي<br><span>الذراع الرياضي</span> لرسن السعودية</h1>
+                <p class="hero-subtitle">
+                    نادٍ سعودي خاص تم الاستحواذ عليه من قبل رسن السعودية لتطوير الأنشطة الرياضية المختلفة، يسعى لإعداد جيل متكامل من الرياضيين المحترفين.
+                </p>
+                <div class="hero-highlights">
+                    <span>✓ أكاديميات متخصصة</span>
+                    <span>✓ معسكرات احترافية</span>
+                    <span>✓ تطوير اللاعبين</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="join.html" class="btn btn-gold btn-large">
+                        <span class="shine"></span>
+                        ابدأ رحلتك الآن
+                    </a>
+                    <a href="#activities" class="btn btn-outline btn-large">
+                        استعرض الأنشطة
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container vision-section scroll-reveal">
+            <div class="vision-content">
+                <h2 class="section-title">عن نادي الجسر الرياضي</h2>
+                <div class="title-underline"></div>
+                <p class="about-text">
+                    <strong>نادي الجسر الرياضي</strong> هو نادٍ سعودي خاص تم الاستحواذ عليه من قبل <strong>رسن السعودية</strong> لغرض تطوير الأنشطة الرياضية المختلفة. يمثل النادي الذراع الاستثماري في قطاع الرياضة لشركة رسن السعودية، ويعمل وفق أعلى المعايير العالمية تحت إشراف الاتحاد السعودي للرياضة.
+                    <br><br>
+                    يسعى النادي لتطوير فريق كرة قدم بكافة فئاته، وإنشاء أكاديميات متخصصة في مختلف الألعاب الرياضية، وتهيئة بيئة احترافية متكاملة تجمع بين التدريب والتعليم والرعاية الصحية.
+                </p>
+            </div>
+            <div class="vision-image">
+                <img src="vision_2030_sports.png" alt="نادي الجسر الرياضي" style="width: 100%; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="section bg-darker">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal">
+                <h2 class="section-title">أنشطة نادي الجسر الرياضي</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle">منظومة شاملة من الأنشطة الرياضية المتنوعة:</p>
+            </div>
+
+            <div class="activities-grid scroll-reveal">
+                <div class="activity-item">
+                    <span class="activity-num">1</span>
+                    <span>تطوير فريق كرة القدم بفئاته المختلفة</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-num">2</span>
+                    <span>إنشاء أكاديميات كرة القدم</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-num">3</span>
+                    <span>إنشاء أكاديميات السباحة</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-num">4</span>
+                    <span>إنشاء أكاديميات الألعاب الأخرى كـ كرة السلة واليد والطائرة</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-num">5</span>
+                    <span>إقامة المعسكرات الرياضية</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-num">6</span>
+                    <span>إقامة الدورات الرياضية والمشاركة فيها</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-num">7</span>
+                    <span>نشر الثقافة الرياضية من خلال إقامة الندوات والدورات التثقيفية</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-num">8</span>
+                    <span>تطوير اللاعبين لغرض تغطية احتياجات النادي ولنوادي أخرى</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5-Year Plan Section -->
+    <section id="plan" class="section">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal">
+                <h2 class="section-title">خطة نادي الجسر الرياضي</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle">اعتمد مجلس إدارة النادي خطة عمل للخمس سنوات المقبلة تشمل تطوير المشاريع التالية:</p>
+            </div>
+
+            <div class="container" style="max-width: 850px; margin: 50px auto 0;">
+                <div class="plan-timeline scroll-reveal">
+                    <div class="plan-item">
+                        <span class="plan-badge">المرحلة الأولى – الربع الثالث 2026</span>
+                        <h4>تطوير أكاديمية كرة القدم</h4>
+                        <p>إقامة تجارب أداء لتأهيل <strong>200 لاعب</strong>، وبناء الأساس التدريبي للأكاديمية وفق أحدث المناهج العالمية.</p>
+                    </div>
+                    <div class="plan-item">
+                        <span class="plan-badge">المرحلة الثانية – الربع الرابع 2026</span>
+                        <h4>تطوير المرافق الرياضية الشاملة</h4>
+                        <p>تطوير مرافق لعدة أنشطة رياضية تشمل ملاعب مغلقة وخارجية، وصالة مغلقة للسباحة، ومرافق تجارية – على أرض بمساحة <strong>50,000 م²</strong> تابعة لوزارة الرياضة ومستثمرة لمدة <strong>30 سنة</strong> من قبل النادي.</p>
+                    </div>
+                    <div class="plan-item">
+                        <span class="plan-badge">المرحلة الثالثة – الربع الأول 2027</span>
+                        <h4>إنشاء فندق سياحي متكامل المرافق</h4>
+                        <p>إنشاء فندق سياحي متكامل المرافق على الأرض المستثمرة، ليكون وجهةً مناسبة لجذب المعسكرات والمحافل الرياضية الإقليمية والدولية.</p>
+                    </div>
+                    <div class="plan-item">
+                        <span class="plan-badge">المرحلة الرابعة – الربع الأول 2027</span>
+                        <h4>الاستثمار في نادي رياضي قائم</h4>
+                        <p>الاستحواذ والاستثمار في نادٍ رياضي قائم لتوسيع الحضور وتعزيز المنظومة الرياضية للمجموعة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academy Programs -->
+    <section id="programs" class="section bg-darker">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal">
+                <h2 class="section-title">برامج الأكاديمية</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle">مسارات تدريبية متخصصة لكل مرحلة عمرية:</p>
+            </div>
+
+            <div class="programs-grid scroll-reveal">
+                <!-- Program 1 -->
+                <div class="program-card">
+                    <div class="program-img" style="background: url('prog_kids.png') no-repeat center center / cover;"></div>
+                    <div class="program-content">
+                        <h3>برنامج البراعم</h3>
+                        <p>تأسيس المهارات الحركية الأساسية وبناء علاقة وطيدة مع الكرة في جو من المتعة والتعلم.</p>
+                        <a href="join.html" class="btn-text">سجل طفلك الآن <span class="arrow">←</span></a>
+                    </div>
+                </div>
+                <!-- Program 2 -->
+                <div class="program-card">
+                    <div class="program-img" style="background: url('prog_teens.png') no-repeat center center / cover;"></div>
+                    <div class="program-content">
+                        <h3>برنامج الناشئين</h3>
+                        <p>التركيز على المهارات الفنية الفردية والبدء في تعلم المفاهيم التكتيكية الجماعية للمراكز المختلفة.</p>
+                        <a href="join.html" class="btn-text">انضم إلينا <span class="arrow">←</span></a>
+                    </div>
+                </div>
+                <!-- Program 3 -->
+                <div class="program-card">
+                    <div class="program-img" style="background: url('prog_pros.png') no-repeat center center / cover;"></div>
+                    <div class="program-content">
+                        <h3>برنامج المحترفين</h3>
+                        <p>إعداد مكثف للاحتراف يشمل الجوانب البدنية العالية والتحليل الفني والتأهيل الذهني للمنافسات الرسمية.</p>
+                        <a href="join.html" class="btn-text">ابدأ الاحتراف <span class="arrow">←</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports Facilities -->
+    <section id="facilities" class="section">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal">
+                <h2 class="section-title">المرافق الرياضية</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle">مرافقنا مصممة وفق أحدث المعايير الدولية لضمان أفضل تجربة تدريبية للاعبين:</p>
+            </div>
+
+            <div class="facility-grid scroll-reveal">
+                <div class="facility-card">
+                    <img src="hero_pitch.png" alt="ملاعب تدريب">
+                    <div class="facility-overlay">
+                        <h3>ملاعب تدريب احترافية</h3>
+                        <p>ملاعب مغلقة وخارجية بمعايير عالمية على أرض 50,000 م².</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <img src="future_facilities.png" alt="صالة لياقة">
+                    <div class="facility-overlay">
+                        <h3>صالة سباحة مغلقة</h3>
+                        <p>صالة سباحة متكاملة لبرامج التدريب والتأهيل الرياضي.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <img src="about_players.png" alt="سكن اللاعبين">
+                    <div class="facility-overlay">
+                        <h3>فندق ومرافق سياحية</h3>
+                        <p>فندق متكامل المرافق لاستضافة المعسكرات والمحافل الدولية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="final-cta" class="section bg-darker">
+        <div class="container text-center scroll-reveal">
+            <h2 class="section-title">هل أنت مستعد لتكون البطل القادم؟</h2>
+            <p class="section-subtitle">انضم إلى نادي الجسر الرياضي اليوم وابدأ رحلة التميز</p>
+            <a href="join.html" class="btn btn-gold btn-large">
+                <span class="shine"></span>
+                سجل الآن
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div class="footer-logo-container" style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <img src="al-jisr-logo.png" alt="نادي الجسر" class="nav-logo-img">
+                </div>
+                <p class="footer-desc">نادي الجسر الرياضي… الذراع الاستثماري الرياضي لرسن السعودية.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="#about">عن النادي</a></li>
+                    <li><a href="#activities">الأنشطة</a></li>
+                    <li><a href="#plan">خطة التطوير</a></li>
+                    <li><a href="join.html">تواصل معنا</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>تابعنا</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">In</a>
+                    <a href="#" class="social-icon">Tw</a>
+                    <a href="#" class="social-icon">Fb</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة &copy; 2026 نادي الجسر الرياضي.</p>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

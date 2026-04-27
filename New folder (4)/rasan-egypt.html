@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رسن القابضة - مصر | Rasan Holding Egypt</title>
+    <meta name="description"
+        content="الفرع الإقليمي لشركة رسن القابضة في جمهورية مصر العربية. استثمارات في الرياضة، العقار، والتكنولوجيا.">
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Egypt Specific Enhancements */
+        .hero-egypt {
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.85)), url('rasan_egypt_hero_1776933630853.png') no-repeat center center / cover;
+        }
+
+        .alliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .alliance-card {
+            background: var(--color-bg-card);
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .alliance-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-gold-mid);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .alliance-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-gold);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .alliance-card:hover::before {
+            opacity: 1;
+        }
+
+        .sector-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(21, 59, 91, 0.1);
+            color: var(--color-teal);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .stat-item h4 {
+            font-size: 2rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Dual Logo Support */
+        .nav-logos {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-divider {
+            width: 1px;
+            height: 40px;
+            background: var(--color-border);
+        }
+
+        .nav-logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="rasan_new_logo.png" alt="رسن القابضة" class="nav-logo-img">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="#about">عن رسن مصر</a>
+                <a href="#sectors">القطاعات</a>
+                <a href="#alliances">التحالفات</a>
+                <a href="join.html">تواصل معنا</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="4.22" x2="19.78" y2="5.64" />
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                </button>
+                <a href="join.html" class="btn btn-gold btn-sm"><span class="shine"></span>شريك استراتيجي</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero hero-egypt">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="container hero-container-center scroll-reveal">
+            <div class="hero-text-box text-center">
+                <h1 class="hero-title">رسن القابضة <span>مصر</span><br>رؤية استثمارية عابرة للحدود</h1>
+                <p class="hero-subtitle">
+                    نقود التحول الاقتصادي في السوق المصري عبر استثمارات استراتيجية في قطاعات الرياضة، التكنولوجيا،
+                    والعقارات، مع التركيز على التنمية المستدامة والابتكار.
+                </p>
+                <div class="hero-highlights justify-center">
+                    <span>✓ تحالفات إقليمية</span>
+                    <span>✓ مشاريع ضخمة</span>
+                    <span>✓ رؤية 2030</span>
+                </div>
+                <div class="hero-buttons justify-center">
+                    <a href="#sectors" class="btn btn-gold btn-large">
+                        <span class="shine"></span>
+                        استكشف القطاعات
+                    </a>
+                    <a href="join.html" class="btn btn-outline btn-large">
+                        طلب شراكة
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container about-container scroll-reveal">
+            <div class="about-content">
+                <h2 class="section-title">رسن في قلب القاهرة</h2>
+                <div class="title-underline"></div>
+                <p class="about-text">
+                    تمثل "رسن القابضة - مصر" الذراع الاستراتيجي للمجموعة في شمال أفريقيا، حيث نهدف إلى خلق قيمة مضافة
+                    للسوق المصري من خلال نقل الخبرات وتوطين التكنولوجيا وبناء مرافق رياضية وعقارية بمعايير عالمية.
+                    <br><br>
+                    نحن نؤمن بأن مصر هي البوابة الحقيقية للنمو في المنطقة، ولذلك نركز جهودنا على تمكين المواهب المحلية
+                    وتطوير البنية التحتية الاستثمارية.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h4>+10</h4>
+                        <p>مشاريع قائمة</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>+500</h4>
+                        <p>فرصة عمل</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>+3</h4>
+                        <p>قطاعات رئيسية</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1541913054-24572242095b?auto=format&fit=crop&q=80&w=1000"
+                    alt="New Cairo Development"
+                    style="width: 100%; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Sectors -->
+    <section id="sectors" class="section bg-darker">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal">
+                <h2 class="section-title">قطاعاتنا المستهدفة</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle">نركز استثماراتنا في القطاعات الأكثر نمواً وتأثيراً في الاقتصاد المصري:</p>
+            </div>
+
+            <div class="programs-grid scroll-reveal">
+                <!-- Sector 1: Sports -->
+                <div class="program-card">
+                    <div class="program-img"
+                        style="background: url('https://images.unsplash.com/photo-1431324155629-1a6eda1eedfa?auto=format&fit=crop&q=80&w=600') no-repeat center center / cover;">
+                    </div>
+                    <div class="program-content">
+                        <div class="sector-badge">الاستثمار الرياضي</div>
+                        <h3>تطوير المنشآت الرياضية</h3>
+                        <p>بناء أندية وأكاديميات رياضية متكاملة لتطوير المواهب المصرية والوصول بها للعالمية.</p>
+                        <a href="index.html" class="btn-text">اكتشف المزيد <span class="arrow">←</span></a>
+                    </div>
+                </div>
+                <!-- Sector 2: Real Estate -->
+                <div class="program-card">
+                    <div class="program-img"
+                        style="background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600') no-repeat center center / cover;">
+                    </div>
+                    <div class="program-content">
+                        <div class="sector-badge">التطوير العقاري</div>
+                        <h3>مشاريع عقارية ذكية</h3>
+                        <p>الاستثمار في العقارات الإدارية والتجارية في العاصمة الإدارية الجديدة والقاهرة الجديدة وفق
+                            أحدث أنظمة الاستدامة.</p>
+                        <a href="#" class="btn-text">اكتشف المزيد <span class="arrow">←</span></a>
+                    </div>
+                </div>
+                <!-- Sector 3: Tech -->
+                <div class="program-card">
+                    <div class="program-img"
+                        style="background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600') no-repeat center center / cover;">
+                    </div>
+                    <div class="program-content">
+                        <div class="sector-badge">التكنولوجيا والتحول الرقمي</div>
+                        <h3>حلول تقنية مبتكرة</h3>
+                        <p>دعم الشركات الناشئة وتطوير حلول التكنولوجيا المالية والذكاء الاصطناعي لخدمة قطاعات الأعمال
+                            المختلفة.</p>
+                        <a href="#" class="btn-text">اكتشف المزيد <span class="arrow">←</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Alliances -->
+    <section id="alliances" class="section">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal">
+                <h2 class="section-title">تحالفاتنا الإقليمية</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle">نبني جسوراً من التعاون مع كبرى الشركات والمؤسسات لتعظيم العائد الاستثماري:
+                </p>
+            </div>
+
+            <div class="alliance-grid scroll-reveal">
+                <div class="alliance-card">
+                    <h3>تحالف القمة الرياضي</h3>
+                    <p>شراكة مع مؤسسات رياضية عالمية لتطبيق برامج تدريب متطورة في مصر.</p>
+                </div>
+                <div class="alliance-card">
+                    <h3>التحالف العقاري المصري السعودي</h3>
+                    <p>تعاون مشترك لتطوير وجهات سياحية وتجارية بمعايير دولية.</p>
+                </div>
+                <div class="alliance-card">
+                    <h3>مركز الابتكار التكنولوجي</h3>
+                    <p>شراكة تقنية مع كبرى شركات السيليكون فالي لنقل المعرفة إلى السوق المصري.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="final-cta" class="section final-cta">
+        <div class="container text-center scroll-reveal">
+            <h2 class="section-title">كن شريكاً في قصة نجاحنا في مصر</h2>
+            <p class="section-subtitle">نحن نفتح آفاقاً جديدة للاستثمار والنمو المشترك</p>
+            <a href="join.html" class="btn btn-gold btn-large">
+                <span class="shine"></span>
+                انضم إلينا كشريك استراتيجي
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div class="footer-logo-container" style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <img src="rasan_new_logo.png" alt="رسن القابضة - مصر" class="nav-logo-img">
+                </div>
+                <p class="footer-desc">رسن القابضة… استثمارات ذكية لرؤية واعدة.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="#about">عن رسن مصر</a></li>
+                    <li><a href="#sectors">القطاعات</a></li>
+                    <li><a href="join.html">تواصل معنا</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>تابعنا</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">In</a>
+                    <a href="#" class="social-icon">Tw</a>
+                    <a href="#" class="social-icon">Fb</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة &copy; 2026 رسن القابضة - فرع مصر.</p>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

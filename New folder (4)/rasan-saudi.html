@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رسن السعودية القابضة | Rasan Holding KSA</title>
+    <meta name="description" content="المقر الرئيسي لشركة رسن السعودية القابضة في المملكة العربية السعودية. رؤية طموحة تواكب تطلعات المملكة 2030.">
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* KSA Specific Enhancements */
+        .hero-saudi {
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.85)), url('https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&q=80&w=1500') no-repeat center center / cover;
+        }
+        
+        .alliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .alliance-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        body.light-mode .alliance-card {
+            background: rgba(0, 0, 0, 0.02);
+            border-color: rgba(0, 0, 0, 0.05);
+        }
+        
+        .alliance-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-gold-mid);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        
+        .alliance-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-gold);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .alliance-card:hover::before {
+            opacity: 1;
+        }
+        
+        .sector-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(21, 59, 91, 0.1);
+            color: var(--color-teal);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .stat-item {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            border-radius: var(--border-radius-md);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: var(--transition);
+        }
+        body.light-mode .stat-item {
+            background: rgba(0, 0, 0, 0.02);
+        }
+        .stat-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-gold-mid);
+            background: rgba(212, 175, 55, 0.05);
+        }
+        .stat-item h4 {
+            font-size: 2.2rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+            font-weight: 900;
+        }
+        
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Dual Logo Support */
+        .nav-logos {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo-divider {
+            width: 1px;
+            height: 40px;
+            background: var(--color-border);
+        }
+        .nav-logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .strategy-text {
+            font-size: 1.05rem;
+            line-height: 2;
+            color: var(--color-text-muted);
+            margin-bottom: 25px;
+        }
+
+        .activities-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .activities-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 20px;
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .activities-list li:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--color-gold-mid);
+            transform: translateX(-5px);
+        }
+
+        .activities-list li::before {
+            content: '✦';
+            color: var(--color-gold-mid);
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .activities-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="rasan_new_logo.png" alt="رسن السعودية" class="nav-logo-img">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="#about">من نحن</a>
+                <a href="#strategy">الاستراتيجية</a>
+                <a href="#sectors">الأنشطة</a>
+                <a href="join.html">تواصل معنا</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="join.html" class="btn btn-gold btn-sm"><span class="shine"></span>شريك استراتيجي</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero hero-saudi">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="container hero-container-center scroll-reveal">
+            <div class="hero-text-box text-center">
+                <h1 class="hero-title">رسن السعودية القابضة<br><span>نصنع المستقبل</span> بالاستثمار الذكي</h1>
+                <p class="hero-subtitle mx-auto">
+                    مجموعة استثمارية رائدة تهدف إلى تمكين المجتمعات وتطوير البنية التحتية الرياضية والتقنية والعقارية، برؤية تمتد من المملكة العربية السعودية إلى المنطقة بأسرها.
+                </p>
+                <div class="hero-highlights justify-center">
+                    <span>✓ استثمارات استراتيجية</span>
+                    <span>✓ تمكين الشباب</span>
+                    <span>✓ ابتكار مستمر</span>
+                </div>
+                <div class="hero-buttons justify-center">
+                    <a href="#sectors" class="btn btn-gold btn-large">
+                        <span class="shine"></span>
+                        استكشف المشاريع
+                    </a>
+                    <a href="join.html" class="btn btn-outline btn-large">
+                        تواصل استثمارياً
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container about-container scroll-reveal">
+            <div class="about-content">
+                <h2 class="section-title">من نحن</h2>
+                <div class="title-underline"></div>
+                <p class="strategy-text">
+                    شركة رسن السعودية هي شركة سعودية مسجلة برقم <strong>2051261899</strong> كشركة ذات مسئولية محدودة برأس مال أجنبي، موجهة للاستثمار في قطاع الرياضة بشكل رئيسي من خلال تطوير عدة أنشطة وتأسيس شركات تابعة في مجال تطوير أنشطة رياضية وترفيهية متنوعة.
+                </p>
+                <p class="strategy-text">
+                    تشمل أنشطتنا الاستثمار في <strong>نادي الجسر الرياضي</strong>، وهو نادٍ خاص تقوم رسن بتطويره مع شركاء محليين، وتحديداً في إنشاء الأكاديميات في كرة القدم والسباحة وغيرها من الأنشطة الأخرى التي يسمح بها ترخيص النادي والاتحاد السعودي للرياضة. كما تشمل أنشطة رسن إقامة المشاريع المكملة كالفنادق والمنتزهات والمرافق الصحية والتجارية.
+                </p>
+
+                <h3 style="color: var(--color-gold-mid); margin: 30px 0 15px;">أنشطة رسن</h3>
+                <ul class="activities-list">
+                    <li>المشاريع الرياضية</li>
+                    <li>شراء وتطوير وبيع نوادي رياضية</li>
+                    <li>مشاريع الضيافة والسياحة والفنادق</li>
+                    <li>مرافق الرعاية الصحية</li>
+                    <li>المرافق التجارية</li>
+                </ul>
+
+                <div class="stats-grid" style="margin-top: 40px;">
+                    <div class="stat-item">
+                        <h4>10M</h4>
+                        <p>رأس المال (ريال سعودي)</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>1B</h4>
+                        <p>القيمة المستهدفة</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>3-5Y</h4>
+                        <p>هدف الإدراج (تداول)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1586724230021-44149b6c0792?auto=format&fit=crop&q=80&w=1000" alt="Riyadh Modern Architecture" style="width: 100%; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+            </div>
+        </div>
+    </section>
+
+    <!-- General Strategy Section -->
+    <section id="strategy" class="section bg-darker">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal">
+                <h2 class="section-title">الاستراتيجية العامة</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle">رؤية استثمارية متكاملة تواكب تطلعات رؤية المملكة 2030</p>
+            </div>
+
+            <div class="alliance-grid scroll-reveal">
+                <div class="alliance-card">
+                    <h3>🏟️ بيئة استثمارية محفوفة بالدعم</h3>
+                    <p>تأتي الاستراتيجية العامة من منطلق الاهتمام في الاستثمار في المملكة العربية السعودية، التي تولي اهتماماً بالغاً في توفير بيئة استثمارية تحتوي على منظومة من القوانين التي تحافظ على الاستثمار وتدعمه وتنميه.</p>
+                </div>
+                <div class="alliance-card">
+                    <h3>🎯 النشاط الرياضي محور التطوير</h3>
+                    <p>تركز الاستراتيجية على النشاط الرياضي بكافة مجالاته، والعمل على مجاراة الأنشطة الرياضية التي تدخل ضمن متطلبات الحكومة والتركيز على رفع الكفاءة الرياضية لمستويات عالمية وتكوين تحالفات دولية.</p>
+                </div>
+                <div class="alliance-card">
+                    <h3>🌍 وجهة متكاملة للمحافل الدولية</h3>
+                    <p>يتمثل المشروع بعدة مشاريع استثمارية مجدية ومدرة للعوائد، تشمل المركز التجاري والمطاعم والكافيه ومراكز اللياقة البدنية والمساحات الخضراء إضافةً إلى الفندق والمركز العلاجي والتأهيلي.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports Sector Development -->
+    <section id="sectors" class="section">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal">
+                <h2 class="section-title">تطوير قطاع الرياضة</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle">نركز استثماراتنا في القطاعات الأكثر نمواً ودعماً من رؤية 2030:</p>
+            </div>
+
+            <div class="programs-grid scroll-reveal">
+                <!-- Sector 1: Sports -->
+                <div class="program-card">
+                    <div class="program-img" style="background: url('https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&q=80&w=600') no-repeat center center / cover;"></div>
+                    <div class="program-content">
+                        <div class="sector-badge">المشاريع الرياضية</div>
+                        <h3>الأندية والأكاديميات</h3>
+                        <p>شراء وتطوير وبيع نوادٍ رياضية، وإنشاء أكاديميات كرة القدم والسباحة وغيرها من الأنشطة الرياضية المرخصة.</p>
+                        <a href="club.html" class="btn-text">نادي الجسر الرياضي <span class="arrow">←</span></a>
+                    </div>
+                </div>
+                <!-- Sector 2: Hospitality -->
+                <div class="program-card">
+                    <div class="program-img" style="background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=600') no-repeat center center / cover;"></div>
+                    <div class="program-content">
+                        <div class="sector-badge">الضيافة والسياحة</div>
+                        <h3>الفنادق والمنتزهات</h3>
+                        <p>إقامة الفنادق والمنتزهات والمرافق السياحية المكملة لنشاط الشركة الأساسي، بمعايير عالمية لجذب المعسكرات والمحافل الدولية.</p>
+                        <a href="#" class="btn-text">اكتشف المزيد <span class="arrow">←</span></a>
+                    </div>
+                </div>
+                <!-- Sector 3: Healthcare & Commercial -->
+                <div class="program-card">
+                    <div class="program-img" style="background: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=600') no-repeat center center / cover;"></div>
+                    <div class="program-content">
+                        <div class="sector-badge">المرافق المتكاملة</div>
+                        <h3>الرعاية الصحية والمرافق التجارية</h3>
+                        <p>تطوير مرافق الرعاية الصحية والمراكز العلاجية والتأهيلية، إضافةً إلى المرافق التجارية المتنوعة ضمن منظومة متكاملة في مكان واحد.</p>
+                        <a href="#" class="btn-text">اكتشف المزيد <span class="arrow">←</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision 2030 Section -->
+    <section id="vision" class="section bg-darker">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal">
+                <h2 class="section-title">رسن ورؤية 2030</h2>
+                <div class="title-underline center"></div>
+                <p class="section-subtitle">نحن فخورون بأن نكون جزءاً من قصة نجاح المملكة:</p>
+            </div>
+
+            <div class="alliance-grid scroll-reveal">
+                <div class="alliance-card">
+                    <h3>🚀 تطوير قطاع الرياضة</h3>
+                    <p>وضعت المملكة خطة استراتيجية وتنفيذية متكاملة لتطوير قطاع الرياضة والنهوض به إلى مصاف العالمية، تستهدف تغيير ثقافة الشعب السعودي ليعتبر الرياضة أحد القطاعات الحيوية التي تنمي الإنسان السعودي صحياً وبدنياً.</p>
+                </div>
+                <div class="alliance-card">
+                    <h3>💎 خصخصة النوادي الرياضية</h3>
+                    <p>بادرت المملكة بطرح برنامج لخصخصة النوادي الرياضية لتوفير دور مهم وفعال للقطاع الخاص في تطوير هذا القطاع والاستفادة من عوائده المجزية على المدى المتوسط والطويل.</p>
+                </div>
+                <div class="alliance-card">
+                    <h3>🌍 الاستثمار الأجنبي</h3>
+                    <p>تسعى المملكة إلى تعزيز مكانتها كوجهة رئيسية للاستثمار الأجنبي من خلال تحسين بيئة الأعمال وتوفير حوافز مبتكرة للمستثمرين الدوليين في مختلف القطاعات الاقتصادية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="final-cta" class="section final-cta">
+        <div class="container text-center scroll-reveal">
+            <h2 class="section-title">شاركونا بناء المستقبل في المملكة</h2>
+            <p class="section-subtitle">نفتح أبوابنا للشراكات الاستراتيجية والفرص الواعدة</p>
+            <a href="join.html" class="btn btn-gold btn-large">
+                <span class="shine"></span>
+                تواصل معنا الآن
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div class="footer-logo-container" style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <img src="rasan_new_logo.png" alt="رسن السعودية" class="nav-logo-img">
+                </div>
+                <p class="footer-desc">رسن السعودية القابضة… فخر الصناعة الاستثمارية السعودية.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#strategy">الاستراتيجية</a></li>
+                    <li><a href="#sectors">الأنشطة</a></li>
+                    <li><a href="join.html">تواصل معنا</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>تابعنا</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">In</a>
+                    <a href="#" class="social-icon">Tw</a>
+                    <a href="#" class="social-icon">Fb</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة &copy; 2026 رسن السعودية القابضة.</p>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

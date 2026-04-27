@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رسن القابضة - الكويت | Rasan Holding Kuwait</title>
+    <meta name="description" content="البوابة الرسمية لشركة رسن القابضة في دولة الكويت.">
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-kuwait {
+            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.95)), url('https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&q=80&w=1500') no-repeat center center / cover;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .coming-soon-box {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            padding: 60px 40px;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+            animation: rotateGlow 10s linear infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cs-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--color-gold-mid);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .hero-kuwait h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .hero-kuwait p {
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="nav-logos">
+                <a href="index.html" class="logo">
+                    <img src="rasan_new_logo.png" alt="رسن القابضة" class="nav-logo-img">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="join.html">تواصل معنا</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Coming Soon Section -->
+    <section class="hero hero-kuwait">
+        <canvas id="particle-canvas"></canvas>
+        <div class="container text-center scroll-reveal">
+            <div class="coming-soon-box">
+                <div class="cs-content">
+                    <div class="cs-badge">قريباً في الكويت</div>
+                    <h1>رسن القابضة <span>الكويت</span></h1>
+                    <p>
+                        نستعد لإطلاق عملياتنا الاستثمارية في دولة الكويت لتكون نقطة ارتكاز محورية للمجموعة.
+                        <br>ترقبوا قريباً مشاريعنا الرائدة التي سترسم مستقبلاً جديداً للاستثمار.
+                    </p>
+                    <div class="hero-buttons justify-center">
+                        <a href="join.html" class="btn btn-gold btn-large">
+                            <span class="shine"></span>
+                            كن شريكاً في النجاح
+                        </a>
+                        <a href="index.html" class="btn btn-outline btn-large">
+                            العودة للرئيسية
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info text-center mx-auto">
+                <img src="rasan_new_logo.png" alt="رسن القابضة" class="nav-logo-img" style="margin-bottom: 20px;">
+                <p class="footer-desc">رسن القابضة… فخر الصناعة الاستثمارية.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة &copy; 2026 رسن القابضة.</p>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
